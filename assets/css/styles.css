@@ -520,39 +520,39 @@ align-items: center;
 }
 
 .skills_html{
-    width: 95%;
+    width: 55%;
 }
 .skills_css{
-    width: 85%;
+    width: 50%;
 }
 .skills_js{
-    width: 60%;
+    width: 40%;
 }
 .skills_react{
-    width: 80%;
+    width: 30%;
 }
 
 .skills_php{
-    width: 75%;
+    width: 65%;
 }
 .skills_node{
     width: 30%;
 }
 .skills_firebase{
-    width: 45%;
+    width: 30%;
 }
 .skills_python{
-    width: 80%;
+    width: 75%;
 }
 
 .skills_figma{
     width: 90%;
 }
 .skills_sketch{
-    width: 75%;
+    width: 40%;
 }
 .skills_photoshop{
-    width: 85%;
+    width: 65%;
 }
 .skills_canva{
     width: 97%;
