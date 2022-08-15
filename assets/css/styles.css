@@ -1213,7 +1213,7 @@ align-items: center;
     }
 
     .portfolio_img{
-        align-items: center;
+        align-items: 320px;
     }
     .project{
         text-align: initial;
@@ -1230,6 +1230,22 @@ align-items: center;
     }
     .project_data{
         padding-top: .8rem;
+    }
+
+    .footer_container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer_bg{
+        padding: 3rem 0 3.5rem;
+    }
+    .footer_links{
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .footer_socials{
+        justify-self: flex-end;
     }
     
 }
