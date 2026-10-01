@@ -330,7 +330,7 @@ themeButton.addEventListener('click', () => {
 // Setup: create a key for brightmbulle@gmail.com at https://web3forms.com and paste it here.
 const CONTACT_FORM_CONFIG = {
     endpoint: 'https://api.web3forms.com/submit',
-    accessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+    accessKey: 'b0e1daec-ce46-489e-8a54-802bf66cda2f',
     recipient: 'brightmbulle@gmail.com',
     timeZone: 'Africa/Douala',
 }
