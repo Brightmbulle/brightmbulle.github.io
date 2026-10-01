@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="description" content="Bright Mbulle — Full Stack Developer, UI/UX and Graphic Designer. Portfolio, services and contact.">
+
+    <!-- Flag JS early so reveal animations never hide content when JS is off -->
+    <script>document.documentElement.classList.add('js')</script>
+
     <!--=========================  UNICONS  ===============-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -11,7 +15,9 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
      <!-- ========================= CSS  =============== -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2026.10">
+
+    <link rel="icon" href="data:,">
 
     <title>Bright Mbulle</title>
 </head>
@@ -19,7 +25,7 @@
      <!-- =========================  HEADER  =============== -->
     <header class="header" id="header">
         <nav class="nav container">
-           <a href="" class="nav_logo">BrightMbulle</a> 
+           <a href="#home" class="nav_logo">BrightMbulle</a>
 
            <div class="nav_menu" id="nav-menu">
                <ul class="nav_list grid">
@@ -54,13 +60,13 @@
                     </a>
                 </li>
                </ul>
-               <i class="uil uil-times nav_close" id="nav-close"></i>
+               <i class="uil uil-times nav_close" id="nav-close" role="button" tabindex="0" aria-label="Close menu"></i>
            </div>
 
            <div class="nav_btns">
             <!--Them change button-->
-            <i class="uil uil-moon change-theme" id="theme-button"></i>
-               <div class="nav_toggle" id="nav-toggle">
+            <i class="uil uil-moon change-theme" id="theme-button" role="button" tabindex="0" aria-label="Toggle dark theme"></i>
+               <div class="nav_toggle" id="nav-toggle" role="button" tabindex="0" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
                 <i class="uil uil-apps  nav_icon"></i>
                </div>
            </div>
@@ -73,27 +79,39 @@
             <div class="home_container container grid">
                 <div class="home_content grid">
                     <div class="home_social">
-                        <a href="https://www.linkedin.com/in/atagah-bright-mbulle/" target="_blank" class="home_social-icon">
+                        <a href="https://www.linkedin.com/in/atagah-bright-mbulle/" target="_blank" rel="noopener" class="home_social-icon" aria-label="LinkedIn">
                             <i class="uil uil-linkedin-alt"></i>
                         </a>
 
-                        <a href="https://dribble.com/" target="_blank" class="home_social-icon">
+                        <a href="https://dribble.com/" target="_blank" rel="noopener" class="home_social-icon" aria-label="Dribbble">
                             <i class="uil uil-dribbble"></i>
                         </a>
 
-                        <a href="https://github.com/Brightmbulle" target="_blank" class="home_social-icon">
+                        <a href="https://github.com/Brightmbulle" target="_blank" rel="noopener" class="home_social-icon" aria-label="GitHub">
                             <i class="uil uil-github-alt"></i>
                         </a>
                     </div>
 
-                    <div class="home_img" >
-                        <img class="home_blob-img" src="assets/img/profile.JPG">
+                    <!-- Hero photo: transparent cut-out (made from profile.JPG) on a gradient backdrop.
+                         To swap the photo, replace assets/img/profile-cutout.webp and .png with
+                         another transparent portrait cropped to the person. -->
+                    <div class="home_img">
+                        <span class="home_img-glow" aria-hidden="true"></span>
+                        <span class="home_img-shape home_img-shape--ring" aria-hidden="true"></span>
+                        <span class="home_img-shape home_img-shape--dot" aria-hidden="true"></span>
+                        <span class="home_img-shape home_img-shape--dots" aria-hidden="true"></span>
+                        <div class="home_img-frame">
+                            <picture>
+                                <source srcset="assets/img/profile-cutout.webp" type="image/webp">
+                                <img class="home_blob-img" src="assets/img/profile-cutout.png" alt="Portrait of Bright Mbulle" width="515" height="914" fetchpriority="high" decoding="async">
+                            </picture>
+                        </div>
                     </div>
 
                     <div class="home_data">
                         <h1 class="home_title">Hi, I'm Bright</h1>
                         <h3 class="home_subtitle">Junior Full Stack developer</h3>
-                        <p class="home_description">High level experience in UI/UX, Web Design and Application development knowledge, expert in Graphic Design, producing quality work.</p>
+                        <p class="home_description">Driven Software Engineer with over two years of experience delivering end-to-end digital solutions. Combines strong technical capabilities in web and mobile app development with a sophisticated background in UI/UX and graphic design to build intuitive, high-performing applications.</p>
                         <a href="#contact" class="button button--flex">
                             Contact Me<i class="uil uil-message button_icon"></i>
                         </a>
@@ -112,13 +130,13 @@
 
      <!--============ ABOUT ==========-->
      <section class="about section" id="about">
-         <h2 class="section_title">About Me</h2>
-         <span class="section_subtitle"></span>
+         <h2 class="section_title" data-reveal="up">About Me</h2>
+         <span class="section_subtitle" data-reveal="up"></span>
 
          <div class="about_container container grid">
-             <img src="assets/img/about.jpg" alt="" class="about_img">
+             <img src="assets/img/about.jpg" alt="Bright Mbulle" class="about_img" loading="lazy" decoding="async" data-reveal="left">
 
-             <div class="about_data">
+             <div class="about_data" data-reveal="right">
                  <p class="about_description">Junior Full Stack Developer, with extensive knowledge and years of experience, Working in web technologies and Ui/Ux design, Delivering quality work. </p>
 
                  <div class="about_info">
@@ -149,14 +167,14 @@
 
      <!--============ SKILLS ==========-->
      <section class="skils section" id="skills">
-        <h2 class="section_title">Skills</h2>
-        <span class="section_subtitle">My technical level</span>
+        <h2 class="section_title" data-reveal="up">Skills</h2>
+        <span class="section_subtitle" data-reveal="up">My technical level</span>
 
-        <div class="skills_container container grid">
-            <div>
+        <div class="skills_container container grid" id="skills-container">
+            <div data-reveal="left">
                 <!--============ SKILLS 1==========-->
                 <div class="skills_content skills_open">
-                    <div class="skills_header">
+                    <div class="skills_header" role="button" tabindex="0">
                         <i class="uil uil-brackets-curly skills_icon"></i>
 
                         <div>
@@ -213,7 +231,7 @@
 
                  <!--============ SKILLS 2==========-->
                  <div class="skills_content skills_close">
-                    <div class="skills_header">
+                    <div class="skills_header" role="button" tabindex="0">
                         <i class="uil uil-server-network skills_icon"></i>
 
                         <div>
@@ -269,10 +287,10 @@
                  </div>
             </div>
 
-           <div>
+           <div data-reveal="right">
              <!--============ SKILLS 3==========-->
              <div class="skills_content skills_close">
-                <div class="skills_header">
+                <div class="skills_header" role="button" tabindex="0">
                     <i class="uil uil-swatchbook skills_icon"></i>
 
                     <div>
@@ -332,17 +350,17 @@
 
      <!--============ QUALIFICATION ==========-->
      <section class="qualification section" id="qualification">
-        <h2 class="section_title">Qualification</h2>
-        <span class="section_subtitle">My personal journey</span>
+        <h2 class="section_title" data-reveal="up">Qualification</h2>
+        <span class="section_subtitle" data-reveal="up">My personal journey</span>
 
-        <div class="qualification_container container">
+        <div class="qualification_container container" data-reveal="up">
             <div class="qualification_tabs">
-                <div class="qualification_button button--flex qualification_active" data-target='#education'>
+                <div class="qualification_button button--flex qualification_active" data-target='#education' role="tab" tabindex="0" aria-selected="true">
                     <i class="uil uil-graduation-cap qualification_icon"></i>
                     Education
                 </div>
 
-                <div class="qualification_button button--flex" data-target='#work'>
+                <div class="qualification_button button--flex" data-target='#work' role="tab" tabindex="0" aria-selected="false">
                     <i class="uil uil-briefcase-alt qualification_icon"></i>
                     Work
                 </div>
@@ -421,7 +439,7 @@
                 </div>
 
                  <!--============ WORK CONTENT ==========-->
-                <div class="qualification_content qualification_active" data-content id="work">
+                <div class="qualification_content" data-content id="work">
                  <div class="qualification_content">
 
                     <!--============ WORK CONTENT 1==========-->                    
@@ -516,44 +534,44 @@
 
      <!--============ SERVICES ==========-->
      <section class="service section" id="services">
-        <h2 class="section_title">Service</h2>
-        <span class="section_subtitle">What I Offer</span>
+        <h2 class="section_title" data-reveal="up">Service</h2>
+        <span class="section_subtitle" data-reveal="up">What I Offer</span>
 
         <div class="services_container container grid">
             <!--============ SERVICES 1==========-->
-            <div class="services_content">
+            <div class="services_content" data-reveal="scale">
               <div>
                 <i class="uil uil-web-grid services_icon"></i>
                 <h3 class="services_title">Ui/Ux <br> Designer</h3>
               </div>
 
-            <span class="button button--flex button--small button--link services_button">
+            <span class="button button--flex button--small button--link services_button" role="button" tabindex="0">
                 View More
                 <i class="uil uil-arrow-right button_icon"></i>
             </span>
 
-            <div class="services_modal">
+            <div class="services_modal" role="dialog" aria-modal="true">
                 <div class="services_modal-content">
-                    <h4 class="service_modal-title">Ui/Ux <br> Designer</h4>
-                    <i class="uil uil-times services_modal-close"></i>
+                    <h4 class="services_modal-title">Ui/Ux <br> Designer</h4>
+                    <i class="uil uil-times services_modal-close" role="button" tabindex="0" aria-label="Close"></i>
 
                     <ul class="services_modal-services grid">
-                        <li class="services_modal-services">
+                        <li class="services_modal-service">
                             <i class="uil uil-check-circle services_modal-icon"></i>
                             <p>Research user habits and issues.</p>
                         </li>
 
-                        <li class="services_modal-services">
+                        <li class="services_modal-service">
                             <i class="uil uil-check-circle services_modal-icon"></i>
                             <p>Create an interactive and accessible model.</p>
                         </li>
 
-                        <li class="services_modal-services">
+                        <li class="services_modal-service">
                             <i class="uil uil-check-circle services_modal-icon"></i>
                             <p>Implementing activities with eye-catching design.</p>
                         </li>
 
-                        <li class="services_modal-services">
+                        <li class="services_modal-service">
                             <i class="uil uil-check-circle services_modal-icon"></i>
                             <p>Testing and troubleshooting user experience issues .</p>
                         </li>
@@ -563,39 +581,39 @@
         </div>
 
             <!--============ SERVICES 2==========-->
-            <div class="services_content">
+            <div class="services_content" data-reveal="scale">
                 <div>
                     <i class="uil uil-arrow services_icon"></i>
                   <h3 class="services_title">Web <br> Developer</h3>
                 </div>
   
-              <span class="button button--flex button--small button--link services_button">
+              <span class="button button--flex button--small button--link services_button" role="button" tabindex="0">
                   View More
                   <i class="uil uil-arrow-right button_icon"></i>
               </span>
   
-              <div class="services_modal">
+              <div class="services_modal" role="dialog" aria-modal="true">
                   <div class="services_modal-content">
-                      <h4 class="service_modal-title">Web <br> Developer</h4>
-                      <i class="uil uil-times services_modal-close"></i>
+                      <h4 class="services_modal-title">Web <br> Developer</h4>
+                      <i class="uil uil-times services_modal-close" role="button" tabindex="0" aria-label="Close"></i>
   
                       <ul class="services_modal-services grid">
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Building Reusable Codes.</p>
                           </li>
   
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Designing New Applications and Websites.</p>
                           </li>
   
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Search Engine Optimization.</p>
                           </li>
   
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Debugging Errors.</p>
                           </li>
@@ -605,39 +623,39 @@
           </div>
 
             <!--============ SERVICES 3==========-->
-              <div class="services_content">
+              <div class="services_content" data-reveal="scale">
                 <div>
                     <i class="uil uil-pen services_icon"></i>
                   <h3 class="services_title">App <br> Developer</h3>
                 </div>
   
-              <span class="button button--flex button--small button--link services_button">
+              <span class="button button--flex button--small button--link services_button" role="button" tabindex="0">
                   View More
                   <i class="uil uil-arrow-right button_icon"></i>
               </span>
   
-              <div class="services_modal">
+              <div class="services_modal" role="dialog" aria-modal="true">
                   <div class="services_modal-content">
-                      <h4 class="service_modal-title">App <br> Developer</h4>
-                      <i class="uil uil-times services_modal-close"></i>
+                      <h4 class="services_modal-title">App <br> Developer</h4>
+                      <i class="uil uil-times services_modal-close" role="button" tabindex="0" aria-label="Close"></i>
   
                       <ul class="services_modal-services grid">
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Evaluating.</p>
                           </li>
   
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Troubleshooting.</p>
                           </li>
   
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Unit testing, automating and coding reviews.</p>
                           </li>
   
-                          <li class="services_modal-services">
+                          <li class="services_modal-service">
                               <i class="uil uil-check-circle services_modal-icon"></i>
                               <p>Prototyping.</p>
                           </li>
@@ -651,21 +669,25 @@
 
      <!-- ========================= PORTFOLIO  =============== -->
      <section class="portfolio section" id="portfolio">
-        <h2 class="section_title">Portfolio</h2>
-        <span class="section_subtitle">Most recent work</span>
+        <h2 class="section_title" data-reveal="up">Portfolio</h2>
+        <span class="section_subtitle" data-reveal="up">Most recent work</span>
 
-        <div class="portfolio_container container swiper mySwiper">
+        <!-- arrows + pagination sit outside .swiper so they can overhang the clipped slides -->
+        <div class="portfolio_slider container" data-reveal="up">
+        <div class="portfolio_container swiper mySwiper">
             <div class="swiper-wrapper">
 
 
                 <!-- ============= PORTFOLIO  1============= -->
                 <div class="portfolio_content grid swiper-slide">
-                    <img src="assets/img/portfolio1.svg" alt="" class="portfolio_img">
+                    <div class="portfolio_img-wrap">
+                        <img src="assets/img/portfolio1.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                    </div>
 
                     <div class="portfolio_data">
                         <h3 class="portfolio_title">Web Development</h3>
                         <p class="portfolio_description">Home care service website for BB Novacare LLC</p>
-                        <a href="https://www.bbnovacare.com/" class="button button--flex button--small portfolio_button">
+                        <a href="https://www.bbnovacare.com/" target="_blank" rel="noopener" class="button button--flex button--small portfolio_button">
                             Visit website 
                             <i class="uil uil-arrow-right button_icon"></i>
                         </a>
@@ -674,7 +696,9 @@
 
                 <!-- ============= PORTFOLIO  2============= -->
                 <div class="portfolio_content grid swiper-slide">
-                    <img src="assets/img/portfolio2.svg" alt="" class="portfolio_img">
+                    <div class="portfolio_img-wrap">
+                        <img src="assets/img/portfolio2.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                    </div>
 
                     <div class="portfolio_data">
                         <h3 class="portfolio_title">Graphics Design</h3>
@@ -688,12 +712,14 @@
 
                 <!-- ============= PORTFOLIO  3============= -->
                 <div class="portfolio_content grid swiper-slide">
-                    <img src="assets/img/portfolio3.svg" alt="" class="portfolio_img">
+                    <div class="portfolio_img-wrap">
+                        <img src="assets/img/portfolio3.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                    </div>
 
                     <div class="portfolio_data">
                         <h3 class="portfolio_title">Graphics Design</h3>
                         <p class="portfolio_description">Trifold brochure for Harmony Care LLC</p>
-                        <a href="https://www.harmonycare.me/" class="button button--flex button--small portfolio_button">
+                        <a href="https://www.harmonycare.me/" target="_blank" rel="noopener" class="button button--flex button--small portfolio_button">
                             Visit their website 
                             <i class="uil uil-arrow-right button_icon"></i>
                         </a>
@@ -702,7 +728,9 @@
 
                 <!-- ============= PORTFOLIO  4============= -->
                 <div class="portfolio_content grid swiper-slide">
-                    <img src="assets/img/portfolio4.svg" alt="" class="portfolio_img">
+                    <div class="portfolio_img-wrap">
+                        <img src="assets/img/portfolio4.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                    </div>
 
                     <div class="portfolio_data">
                         <h3 class="portfolio_title">Graphics Design</h3>
@@ -716,12 +744,14 @@
 
                 <!-- ============= PORTFOLIO  5============= -->
                 <div class="portfolio_content grid swiper-slide">
-                    <img src="assets/img/portfolio5.svg" alt="" class="portfolio_img">
+                    <div class="portfolio_img-wrap">
+                        <img src="assets/img/portfolio5.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                    </div>
 
                     <div class="portfolio_data">
                         <h3 class="portfolio_title">Graphics Design</h3>
                         <p class="portfolio_description">Flyer for Harmony LLC</p>
-                        <a href="https://www.harmonycare.me" class="button button--flex button--small portfolio_button">
+                        <a href="https://www.harmonycare.me" target="_blank" rel="noopener" class="button button--flex button--small portfolio_button">
                             Visit their website 
                             <i class="uil uil-arrow-right button_icon"></i>
                         </a>
@@ -730,7 +760,9 @@
 
               <!-- ============= PORTFOLIO  6============= -->
               <div class="portfolio_content grid swiper-slide">
-                <img src="assets/img/portfolio6.png" alt="" class="portfolio_img">
+                <div class="portfolio_img-wrap">
+                    <img src="assets/img/portfolio6.png" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                </div>
 
                 <div class="portfolio_data">
                     <h3 class="portfolio_title">Ui/Ux Design</h3>
@@ -744,7 +776,9 @@
             
               <!-- ============= PORTFOLIO  7============= -->
               <div class="portfolio_content grid swiper-slide">
-                <img src="assets/img/portfolio7.png" alt="" class="portfolio_img">
+                <div class="portfolio_img-wrap">
+                    <img src="assets/img/portfolio7.png" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                </div>
 
                 <div class="portfolio_data">
                     <h3 class="portfolio_title">Modern Website</h3>
@@ -758,24 +792,25 @@
             </div>
 
      </div>
+        </div>
 
              <!-- add swiper arrow -->
-             <div class="swiper-button-next">
+             <div class="swiper-button-next" aria-label="Next project">
                 <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
              </div>
-             <div class="swiper-button-prev">
+             <div class="swiper-button-prev" aria-label="Previous project">
                 <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
              </div>
 
              <!--add pagination-->
-             <div class="swiper-pagination"></div>
+             <div class="swiper-pagination portfolio_pagination"></div>
         </div>
      </section>
 
      <!-- =========================  PROJECT  =============== -->
      <section class="project section">
         <div class="project_bg">
-            <div class="project_container container grid">
+            <div class="project_container container grid" data-reveal="up">
                 <div class="project_data">
                     <h2 class="project_title">You have a new project</h2>
                     <p class="project_description">Contact me and get a 40% discount on your new project.</p>
@@ -785,23 +820,23 @@
                     </a>
                 </div>
 
-                <img src="assets/img/project.png" alt="" class="project_img">
+                <img src="assets/img/project.png" alt="" class="project_img" loading="lazy" decoding="async">
             </div>
         </div>
      </section>
 
      <!-- ========================= TESTIMONIAL =============== -->
-     <section class="testimonial section">
-        <h2 class="section_title">Testimonial</h2>
-        <span class="section_subtitle">My client saying</span>
+     <section class="testimonial section" id="testimonials">
+        <h2 class="section_title" data-reveal="up">Testimonial</h2>
+        <span class="section_subtitle" data-reveal="up">My client saying</span>
 
-        <div class="testimonial_container container swiper mySwiper">
+        <div class="testimonial_container container swiper mySwiper" data-reveal="up">
             <div class="swiper-wrapper">
                 <!-- ======== TESTIMONIAL 1======== -->
                 <div class="testimonial_content swiper-slide">
                     <div class="testimonial_data">
                         <div class="testimonial_header">
-                            <img src="assets/img/testimonial1-3.png" alt="" class="testimonial_img">
+                            <img src="assets/img/testimonial1-3.png" alt="" class="testimonial_img" loading="lazy" decoding="async" width="60" height="60">
 
                             <div>
                                 <h3 class="testimonial_name">Thierry Fotabong</h3>
@@ -810,11 +845,11 @@
                         </div>
 
                         <div>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
                         </div>
                     </div>
 
@@ -826,7 +861,7 @@
                   <div class="testimonial_content swiper-slide">
                     <div class="testimonial_data">
                         <div class="testimonial_header">
-                            <img src="assets/img/testimonial2.png" alt="" class="testimonial_img">
+                            <img src="assets/img/testimonial2.png" alt="" class="testimonial_img" loading="lazy" decoding="async" width="60" height="60">
 
                             <div>
                                 <h3 class="testimonial_name">Arrey Bryant</h3>
@@ -835,11 +870,11 @@
                         </div>
 
                         <div>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
                         </div>
                     </div>
 
@@ -851,7 +886,7 @@
                   <div class="testimonial_content swiper-slide">
                     <div class="testimonial_data">
                         <div class="testimonial_header">
-                            <img src="assets/img/testimonial1-3.png" alt="" class="testimonial_img">
+                            <img src="assets/img/testimonial1-3.png" alt="" class="testimonial_img" loading="lazy" decoding="async" width="60" height="60">
 
                             <div>
                                 <h3 class="testimonial_name">Agbor Solomon</h3>
@@ -860,11 +895,11 @@
                         </div>
 
                         <div>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
                         </div>
                     </div>
 
@@ -876,7 +911,7 @@
                   <div class="testimonial_content swiper-slide">
                     <div class="testimonial_data">
                         <div class="testimonial_header">
-                            <img src="assets/img/testimonial1-3.png" alt="" class="testimonial_img">
+                            <img src="assets/img/testimonial1-3.png" alt="" class="testimonial_img" loading="lazy" decoding="async" width="60" height="60">
 
                             <div>
                                 <h3 class="testimonial_name">Ngome Gislain</h3>
@@ -885,11 +920,11 @@
                         </div>
 
                         <div>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
-                            <i class="uil uil-star testimonial_icon-star"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
+                            <i class="uil uil-star testimonial_icon-star" aria-hidden="true"></i>
                         </div>
                     </div>
 
@@ -901,75 +936,91 @@
             
             <!-- add pagination -->
             <div class="swiper-pagination swiper-pagination-testimonial"></div>
-    </div>
-
-
         </div>
      </section>
 
 
      <!-- =========================  CONTACT ME  =============== -->
      <section class="contact section" id="contact">
-        <h2 class="section_title">Contact Me</h2>
-        <span class="section_subtitle">Get in touch</span>
+        <h2 class="section_title" data-reveal="up">Contact Me</h2>
+        <span class="section_subtitle" data-reveal="up">Get in touch</span>
 
         <div class="contact_container container grid">
-            <div>
-                <div class="contact information">
+            <div data-reveal="left">
+                <div class="contact_information">
                     <i class="uil uil-phone contact_icon"></i>
 
                     <div>
                         <h3 class="contact_title">Call Me</h3>
-                         <span class="contact_subtitle">+237-683-379-936</span>
+                         <a href="tel:+237683379936" class="contact_subtitle">+237-683-379-936</a>
                     </div>
                 </div>
 
-                <div class="contact information">
+                <div class="contact_information">
                     <i class="uil uil-envelope-check contact_icon"></i>
 
                     <div>
                         <h3 class="contact_title">Email</h3>
-                         <span class="contact_subtitle">brightmbulle@gmail.com</span>
+                         <a href="mailto:brightmbulle@gmail.com" class="contact_subtitle">brightmbulle@gmail.com</a>
                     </div>
                 </div>
 
 
-                <div class="contact information">
+                <div class="contact_information">
                     <i class="uil uil-location-point contact_icon"></i>
 
                     <div>
-                        <h3 class="contact_title">Locatoin</h3>
+                        <h3 class="contact_title">Location</h3>
                          <span class="contact_subtitle">Buea, SouthWest, Cameroon</span>
                     </div>
                 </div>
             </div>
 
-            <form action="https://formsubmit.co/brightmbulle@gmail.com" method="POST" class="contact_form grid">
+            <!-- Submitted with fetch() by main.js (see CONTACT FORM section) -->
+            <form class="contact_form grid" id="contact-form" novalidate data-reveal="right">
+                <!-- Honeypot: hidden from people, bots fill it in -->
+                <input type="checkbox" name="botcheck" class="contact_honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
                 <div class="contact_inputs grid">
-                    <div class="contact_content">
-                        <label for="" class="contact_label">Name</label>
-                        <input type="text" name="name" class="contct_input">
+                    <div class="contact_field">
+                        <div class="contact_content">
+                            <label for="contact-name" class="contact_label">Name</label>
+                            <input type="text" id="contact-name" name="name" class="contact_input" autocomplete="name" maxlength="100" required aria-describedby="contact-name-error">
+                        </div>
+                        <p class="contact_error" id="contact-name-error"></p>
                     </div>
-                    <div class="contact_content">
-                        <label for="" class="contact_label">Email</label>
-                        <input type="email" name="email" class="contct_input">
+                    <div class="contact_field">
+                        <div class="contact_content">
+                            <label for="contact-email" class="contact_label">Email</label>
+                            <input type="email" id="contact-email" name="email" class="contact_input" autocomplete="email" maxlength="150" required aria-describedby="contact-email-error">
+                        </div>
+                        <p class="contact_error" id="contact-email-error"></p>
                     </div>
                 </div>
-                <div class="contact_content">
-                    <label for="" class="contact_label">Project</label>
-                    <input type="text" name="project" class="contct_input">
+                <div class="contact_field">
+                    <div class="contact_content">
+                        <label for="contact-project" class="contact_label">Project</label>
+                        <input type="text" id="contact-project" name="project" class="contact_input" maxlength="150" required aria-describedby="contact-project-error">
+                    </div>
+                    <p class="contact_error" id="contact-project-error"></p>
                 </div>
-                <div class="contact_content">
-                    <label for="" class="contact_label">Message</label>
-                    <textarea name="message" id="" cols="0" rows="7" class="contact_input"></textarea>
+                <div class="contact_field">
+                    <div class="contact_content">
+                        <label for="contact-message" class="contact_label">Message</label>
+                        <textarea name="message" id="contact-message" rows="7" class="contact_input" maxlength="5000" required aria-describedby="contact-message-error"></textarea>
+                    </div>
+                    <p class="contact_error" id="contact-message-error"></p>
                 </div>
 
-                <div>
-                    <button type="submit" class="button button--flex">
-                        Send Message
+                <div class="contact_actions">
+                    <button type="submit" class="button button--flex contact_button">
+                        <span class="contact_button-text">Send Message</span>
                         <i class="uil uil-message button_icon"></i>
+                        <span class="contact_spinner" aria-hidden="true"></span>
                     </button>
                 </div>
+
+                <div class="contact_status" id="contact-status" role="status" aria-live="polite" hidden></div>
             </form>
         </div>
      </section>
@@ -997,15 +1048,15 @@
                 </ul>
 
                 <div class="footer_socials">
-                    <a href="https://web.facebook.com/amnicebright" target="blank" class="footer_social">
+                    <a href="https://web.facebook.com/amnicebright" target="_blank" rel="noopener" class="footer_social">
                         <i class="uil uil-facebook-f"></i>
                     </a>
                     
-                    <a href="https://www.instagram.com/brightmbulle" target="blank" class="footer_social">
+                    <a href="https://www.instagram.com/brightmbulle" target="_blank" rel="noopener" class="footer_social">
                         <i class="uil uil-instagram"></i>
                     </a>
 
-                    <a href="https://twitter.com/BrightMbulle" target="blank" class="footer_social">
+                    <a href="https://twitter.com/BrightMbulle" target="_blank" rel="noopener" class="footer_social">
                         <i class="uil uil-twitter-alt"></i>
                     </a>
                 </div>
@@ -1017,7 +1068,7 @@
 
 
      <!-- ========================= SCROLL TOP  =============== -->
-     <a href="#" class="scrollup" id="scroll-up">
+     <a href="#home" class="scrollup" id="scroll-up" aria-label="Back to top">
         <i class="uil uil-arrow-up scrollup_icon "></i>
      </a>
 
@@ -1026,6 +1077,6 @@
     <script src="assets/js/swiper-bundle.min.js"></script>
 
      <!-- =========================  MAIN JS =============== -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2026.10"></script>
 </body>
 </html>
