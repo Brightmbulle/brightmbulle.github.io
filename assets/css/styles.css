@@ -1,5 +1,5 @@
 /*========================= GOOGLE FONTS  ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* Poppins is loaded non-blocking from index.html (an @import here delayed the first paint) */
 
 /*========================= VARIBLE CSS  ===============*/
 :root {

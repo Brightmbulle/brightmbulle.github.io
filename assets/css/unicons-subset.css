@@ -1,0 +1,41 @@
+/* Unicons Line (Apache-2.0, https://iconscout.com/unicons) - self-hosted subset with only the icons this site uses.
+   To add an icon, regenerate the subset or switch back to the Unicons CDN stylesheet. */
+@font-face{font-family:'unicons-line';src:url('../fonts/unicons-subset.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:block}
+[class^='uil-']:before,[class*=' uil-']:before{font-family:'unicons-line';font-style:normal;font-weight:normal;speak:none;display:inline-block;text-decoration:inherit;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.uil-angle-down:before{content:'\eb3a'}
+.uil-angle-left-b:before{content:'\ec49'}
+.uil-angle-right-b:before{content:'\eb9f'}
+.uil-apps:before{content:'\eabf'}
+.uil-arrow:before{content:'\eb30'}
+.uil-arrow-down:before{content:'\ebe9'}
+.uil-arrow-right:before{content:'\ebb5'}
+.uil-arrow-up:before{content:'\ebb6'}
+.uil-brackets-curly:before{content:'\ec50'}
+.uil-briefcase-alt:before{content:'\e8ac'}
+.uil-calendar-alt:before{content:'\e8dc'}
+.uil-check-circle:before{content:'\e9c2'}
+.uil-download-alt:before{content:'\eb4d'}
+.uil-dribbble:before{content:'\e9df'}
+.uil-envelope-check:before{content:'\e9e1'}
+.uil-estate:before{content:'\eca5'}
+.uil-facebook-f:before{content:'\ec01'}
+.uil-file-alt:before{content:'\e94b'}
+.uil-github-alt:before{content:'\ec0f'}
+.uil-graduation-cap:before{content:'\e905'}
+.uil-instagram:before{content:'\ebfe'}
+.uil-linkedin-alt:before{content:'\ec16'}
+.uil-location-point:before{content:'\e8e2'}
+.uil-message:before{content:'\eb23'}
+.uil-moon:before{content:'\ea8b'}
+.uil-mouse-alt:before{content:'\e967'}
+.uil-pen:before{content:'\e98e'}
+.uil-phone:before{content:'\e9e7'}
+.uil-scenery:before{content:'\ea40'}
+.uil-server-network:before{content:'\ea2f'}
+.uil-star:before{content:'\e84e'}
+.uil-sun:before{content:'\e9cc'}
+.uil-swatchbook:before{content:'\ead4'}
+.uil-times:before{content:'\e9b8'}
+.uil-twitter-alt:before{content:'\ec25'}
+.uil-user:before{content:'\ea0d'}
+.uil-web-grid:before{content:'\ea20'}

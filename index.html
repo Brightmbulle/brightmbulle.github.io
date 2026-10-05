@@ -8,14 +8,24 @@
     <!-- Flag JS early so reveal animations never hide content when JS is off -->
     <script>document.documentElement.classList.add('js')</script>
 
+    <!-- ========================= FONTS (non-blocking) ===============
+         The page renders immediately with a fallback font; Poppins swaps in when it arrives,
+         so a slow mobile connection never leaves the screen blank. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"></noscript>
+
     <!--=========================  UNICONS  ===============-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Self-hosted subset (7 KB) of the icons used on this site, instead of the full CDN icon set -->
+    <link rel="preload" href="assets/fonts/unicons-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/unicons-subset.css?v=2026.10.5">
 
     <!-- ========================= SWIPER CSS  =============== -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
      <!-- ========================= CSS  =============== -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=2026.10">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2026.10.5">
 
     <link rel="icon" href="data:,">
 
@@ -681,7 +691,7 @@
                 <!-- ============= PORTFOLIO  1============= -->
                 <div class="portfolio_content grid swiper-slide">
                     <div class="portfolio_img-wrap">
-                        <img src="assets/img/portfolio1.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                        <img src="assets/img/portfolio1.webp" alt="" class="portfolio_img" width="800" height="466" loading="lazy" decoding="async">
                     </div>
 
                     <div class="portfolio_data">
@@ -697,7 +707,7 @@
                 <!-- ============= PORTFOLIO  2============= -->
                 <div class="portfolio_content grid swiper-slide">
                     <div class="portfolio_img-wrap">
-                        <img src="assets/img/portfolio2.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                        <img src="assets/img/portfolio2.webp" alt="" class="portfolio_img" width="800" height="1126" loading="lazy" decoding="async">
                     </div>
 
                     <div class="portfolio_data">
@@ -713,7 +723,7 @@
                 <!-- ============= PORTFOLIO  3============= -->
                 <div class="portfolio_content grid swiper-slide">
                     <div class="portfolio_img-wrap">
-                        <img src="assets/img/portfolio3.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                        <img src="assets/img/portfolio3.webp" alt="" class="portfolio_img" width="800" height="518" loading="lazy" decoding="async">
                     </div>
 
                     <div class="portfolio_data">
@@ -729,7 +739,7 @@
                 <!-- ============= PORTFOLIO  4============= -->
                 <div class="portfolio_content grid swiper-slide">
                     <div class="portfolio_img-wrap">
-                        <img src="assets/img/portfolio4.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                        <img src="assets/img/portfolio4.webp" alt="" class="portfolio_img" width="800" height="1132" loading="lazy" decoding="async">
                     </div>
 
                     <div class="portfolio_data">
@@ -745,7 +755,7 @@
                 <!-- ============= PORTFOLIO  5============= -->
                 <div class="portfolio_content grid swiper-slide">
                     <div class="portfolio_img-wrap">
-                        <img src="assets/img/portfolio5.svg" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                        <img src="assets/img/portfolio5.webp" alt="" class="portfolio_img" width="800" height="1131" loading="lazy" decoding="async">
                     </div>
 
                     <div class="portfolio_data">
@@ -761,7 +771,7 @@
               <!-- ============= PORTFOLIO  6============= -->
               <div class="portfolio_content grid swiper-slide">
                 <div class="portfolio_img-wrap">
-                    <img src="assets/img/portfolio6.png" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio6.webp" alt="" class="portfolio_img" width="739" height="548" loading="lazy" decoding="async">
                 </div>
 
                 <div class="portfolio_data">
@@ -777,7 +787,7 @@
               <!-- ============= PORTFOLIO  7============= -->
               <div class="portfolio_content grid swiper-slide">
                 <div class="portfolio_img-wrap">
-                    <img src="assets/img/portfolio7.png" alt="" class="portfolio_img" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio7.webp" alt="" class="portfolio_img" width="800" height="415" loading="lazy" decoding="async">
                 </div>
 
                 <div class="portfolio_data">
@@ -820,7 +830,7 @@
                     </a>
                 </div>
 
-                <img src="assets/img/project.png" alt="" class="project_img" loading="lazy" decoding="async">
+                <img src="assets/img/project.webp" alt="" class="project_img" width="432" height="577" loading="lazy" decoding="async">
             </div>
         </div>
      </section>
